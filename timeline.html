@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Timeline - SHADE SEEKERS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="images/logoo2.png"
+    
+</head>
+<body>
+    <style>
+                ::-webkit-scrollbar{
+            width: 8.5px;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: rgb(138, 154, 91) ;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: linear-gradient(green, greenyellow);
+            border-radius: 5px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans';
+            box-sizing: border-box;
+        }
+        body{
+            background: #2e364a;
+        }
+        .timeline{
+            position: relative;
+            max-width: 1200px;
+            margin: 100px auto;
+        }
+        .container{
+            padding: 10px 50px;
+            position: relative;
+            width: 50%;
+            animation: movedown 1s linear forwards;
+            opacity: 0;
+        }
+        @keyframes movedown{
+            0%{
+                opacity: 1;
+                transform: translateY(-30px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        .container:nth-child(1){
+            animation-delay: 0s;
+        }
+        .container:nth-child(2){
+            animation-delay: 1s;
+        }
+        .container:nth-child(3){
+            animation-delay: 2s;
+        }
+        .container:nth-child(4){
+            animation-delay: 3s;
+        }
+        .container:nth-child(5){
+            animation-delay: 4s;
+        }
+        .container:nth-child(6){
+            animation-delay: 5s;
+        }
+        .text-box{
+            padding: 20px 30px;
+            background: #fff;
+            position: relative;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .left-container{
+            left: 0;
+        }
+        .right-container{
+            left: 50%;
+        }
+        .container img{
+            position: absolute;
+            width: 40px;
+            border-radius: 50px;
+            right: -20px;
+            top: 32px;
+            z-index: 10;
+        }
+        .right-container img{
+            left: -20px;
+        }
+        .timeline::after{
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            background: #fff;
+            top: 0;
+            left: 50%;
+            margin-left: -3px;
+            z-index: -1;
+            animation: moveline 6s linear forwards;
+        }
+        @keyframes moveline{
+            0%{
+                height: 0;
+            }
+            100%{
+                height: 100%;     
+            }
+        }
+        .text-box h2{
+            font-weight: 600;
+        }
+        .text-box small{
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .left-container-arrow{
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 28px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid #fff;
+            right: -15px;
+        }
+        .right-container-arrow{
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 28px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-right: 15px solid #fff;
+            left: -15px;
+        }
+        @media screen and (max-width: 600px) {
+            .timeline{
+                margin: 50px auto;
+            }
+            .timeline::after{
+                left: 31px;
+            }
+            .container{
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 25px;
+            }
+            .text-box{
+                font-size: 13px;
+            }
+            .text-box small{
+                margin-bottom: 10px;
+            }
+            .right-container{
+                left: 0;
+            }
+            .left-container img, .right-container img{
+                left: 10px;
+            }
+            .left-container-arrow, .right-container-arrow{
+                border-right: 15px solid #fff;
+                border-left: 0;
+                left: -15px;
+            }
+        }
+        .footer{
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer h4{
+            margin-bottom: 25px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        .icons{
+            color: rgb(124, 249, 124);
+            margin: 0 13px;
+            cursor: pointer;
+            font-size: 30px;
+            padding: 18px 0;
+        }
+        .footer2{
+            color: greenyellow;
+        }
+        
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px #222a3a;
+            background-color: #f4f6f9;
+            color: #2e364a;
+            }
+
+            th, td {
+            border: 1px solid #9ab;
+            padding: 10px;
+            text-align: left;
+            }
+
+            th {
+            background-color: #bfd7ed;
+            color: #2e364a;
+            }
+
+            caption {
+            caption-side: top;
+            text-align: center;
+            font-size: 1.5em;
+            margin: 10px;
+            color: #ff6699;
+            }
+
+            tr:nth-child(even) {
+            background-color: #e9eff5;
+            }
+
+            tr:hover {
+            background-color: #dce7f2;
+            }
+
+  
+    </style>
+    
+
+    <div class="timeline">
+        <div class="container left-container">
+            <img src="images/logoo2.png">
+            <div class="text-box">
+                <h2>Свършено през хакатона - юни 2025</h2>
+                <p> Това всъщонста е всичко, това което виждате сега в сайта, който решава соц проблем с тропичните нощи. Използваме
+                    знанията и уменията си, за да създадем уеб сайт за подобряването на здравето на хората чрез повече информация за 
+                    това къде могат да отидам при мн топло време и как всъщост да стигнат тав, къде са най-високите температури и най-важното
+                    за по старите потребители на страницата SOS бутон
+                </p>
+                <span class="left-container-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <img src="images/logoo2.png">
+            <div class="text-box">
+                <h2>След хакатона - до края на лятото</h2>
+                <p> Мислим да завършим и обновим сайта със свеж дизайн допълнителни функции и информация.
+                </p>
+                <span class="right-container-arrow"></span>
+            </div>
+        </div>
+        <div class="container left-container">
+            <img src="images/logoo2.png">
+            <div class="text-box">
+                <h2>Основни идеи и мисли до края на 2025г.</h2>
+                <p> Ще започнем да отчитаме приходи, които смятаме да инвестираме в разширяване на нашия бизнес. Ще започнем да търсим партньори и се надяваме
+                    през този период да получим и обогатим нашите знания в сферата на екологията и програмирането на уебсайтове.
+                </p>
+                <span class="left-container-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <img src="images/logoo2.png">
+            <div class="text-box">
+                <h2>Първата половина на следващата година</h2>
+                <small> я.2026г - м.2026г </small>
+                <p> През този пероид сме планирали завършването на Temperature HeatMAP, като не само да използваме готови данни от НИМХ примерно,
+                    а да инсталираме наши собствени датчици, които да изпращат динамична информация до картата, която да се обновяваве през определн 
+                    период от време.
+                </p>
+                <span class="right-container-arrow"></span>
+            </div>
+        </div>
+        <div class="container left-container">
+            <img src="images/logoo2.png">
+            <div class="text-box">
+                <h2>Размисли за развитие с общината</h2>
+                <small> 2027г. </small>
+                <p> Смятаме, че през 2027 година ще сме успяли да развиет нашата идея и тя вече ще функционира нормално. С помощ от ментори ще запомнем работа 
+                    към партньорство с общината, която да инвестира в нас, която има различни развлечения през лятото. Ние ще помогнем за организацията и
+                    доброто преживяване на гостите. 
+                </p>
+                <span class="left-container-arrow"></span>
+            </div>
+        </div>
+        <div class="container right-container">
+            <img src="images/logoo2.png">
+            <div class="text-box">
+                <h2>Голямият Бизнес - SHADE SEEKERS </h2>
+                <small> 2028г. </small>
+                <p> Тук смятаме вече да изработваме свои часовници, които да помагат на по-възрастни граждани, с врагедено приложението в тях и с основна функция - SOS спешен бутон
+                    Потенциално партньорство с Клуб на Пенсионера, град София.
+                </p>
+                <span class="right-container-arrow"></span>
+            </div>
+        </div>
+        <!-- <div class="container left-container">
+            <div class="text-box">
+                <h2>Размисли за развитие през 2027г.</h2>
+                
+                <p> Това всъщонста е всичко, това което виждате сега в сайта, който решава соц проблем с тропичните нощи. Използваме
+                    знанията и уменията си, за да създадем уеб сайт за подобряването на здравето на хората чрез повече информация за 
+                    това къде могат да отидам при мн топло време и как всъщост да стигнат тав, къде са най-високите температури и най-важното
+                    за по старите потребители на страницата SOS бутон
+                </p>
+            </div>
+        </div> -->
+    </div>
+
+      <table>
+    <caption> Месечни приходи (примерни)</caption>
+    <thead>
+      <tr>
+        <th>Източник</th>
+        <th>Сума</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Абонамент (5 човека × 20 лв)</td>
+        <td>100 лв</td>
+      </tr>
+      <tr>
+        <td>Партньорства / реклама</td>
+        <td>50 лв</td>
+      </tr>
+      <tr>
+        <td>Дарения</td>
+        <td>20 лв</td>
+      </tr>
+      <tr>
+        <th>Общо</th>
+        <th>170 лв</th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Месечни разходи (примерни)</caption>
+    <thead>
+      <tr>
+        <th>Разход</th>
+        <th>Сума</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Домейн</td>
+        <td>3.30 лв</td>
+      </tr>
+      <tr>
+        <td>Хостинг</td>
+        <td>16.70 лв</td>
+      </tr>
+      <tr>
+        <td>Поддръжка</td>
+        <td>50.00 лв</td>
+      </tr>
+      <tr>
+        <td>Лого и икони</td>
+        <td>12.50 лв</td>
+      </tr>
+      <tr>
+        <td>Реклама и маркетинг</td>
+        <td>33.30 лв</td>
+      </tr>
+      <tr>
+        <th>Общо</th>
+        <th>115.80 лв</th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Годишни приходи (примерни)</caption>
+    <thead>
+      <tr>
+        <th>Източник</th>
+        <th>Сума</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Абонаменти (5 × 20 лв × 12 месеца)</td>
+        <td>1 200 лв</td>
+      </tr>
+      <tr>
+        <td>Дарения (70 лв × 12 месеца)</td>
+        <td>840 лв</td>
+      </tr>
+      <tr>
+        <th>Общо</th>
+        <th>2 040 лв</th>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>Годишни разходи (примерни)</caption>
+    <thead>
+      <tr>
+        <th>Разход</th>
+        <th>Сума</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Домейн</td>
+        <td>40 лв</td>
+      </tr>
+      <tr>
+        <td>Хостинг</td>
+        <td>200 лв</td>
+      </tr>
+      <tr>
+        <td>Поддръжка</td>
+        <td>600 лв</td>
+      </tr>
+      <tr>
+        <td>Реклама</td>
+        <td>400 лв</td>
+      </tr>
+      <tr>
+        <td>Дизайн</td>
+        <td>150 лв</td>
+      </tr>
+      <tr>
+        <th>Общо</th>
+        <th>1 390 лв</th>
+      </tr>
+    </tbody>
+  </table>
+
+    <section class="footer">
+            <h4>За нас</h4>
+            <p class="footer2"> Ние сме Greenovators – екип от млади хора с идеи за по-прохладен и по-приятен град. <br>
+                Създадохме този сайт, за да помогнем в борбата с тропическите нощи, като събираме на едно място чешми, сенчести и прохладни зони, достъпни за всички. <br>
+                Вярваме, че с технологии, грижа и креативност градът може да стане по-хладно и приятно място за хората и животните!
+            </p>
+            <div class="icons">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+
+            <p>© 2025 Проект "SHADE SEEKERS" | Зеленоватори</p>
+        </section>
+
+        <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfni1gmXzd6K4MdVXMsZVGexFWF-7DQENqdE_dd6YKE_gMVEQ/viewform?embedded=true" 
+        width="640" height="2534" frameborder="0" marginheight="0" marginwidth="0">Зарежда се…</iframe> -->
+</body>
+</html>

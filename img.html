@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider Design - Easy Tutorials</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    </head>
+    
+    <body>
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .container{
+                width: 100%;
+                height: 100vh;
+                background: #222;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .swiper{
+                height: fit-content;
+                width: 80%;
+            }
+            .swiper-slide img{
+                width: 100%;
+            }
+
+            .swiper .swiper-button-prev, .swiper .swiper-button-next{
+                color: greenyellow;
+            }
+            .swiper .swiper-pagination-bullet-active{
+                background: greenyellow;
+            }
+            .footer{
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer h4{
+            margin-bottom: 25px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        .icons{
+            color: rgb(124, 249, 124);
+            margin: 0 13px;
+            cursor: pointer;
+            font-size: 30px;
+            padding: 18px 0;
+        }
+
+        </style>
+    <div class="container">
+        <!-- Slider main container -->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img src="images/ph1.JPG"></div>
+      <div class="swiper-slide"><img src="images/ph2.JPG"></div>
+      <div class="swiper-slide"><img src="images/ph3.JPG"></div>
+      <div class="swiper-slide"><img src="images/ph4.JPG"></div>
+      <div class="swiper-slide"><img src="images/ph5.JPG"></div>
+      <div class="swiper-slide"><img src="images/ph6.JPG"></div>
+      <div class="swiper-slide"><img src="images/ph7.JPG"></div>
+      
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+   
+  </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+        autoplay:{
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+  loop: true,
+
+ 
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+ 
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  
+});
+    </script>
+
+<section class="footer">
+    <h4>За нас</h4>
+    <p> Ние сме Greenovators – екип от млади хора с идеи за по-прохладен и по-приятен град. <br>
+        Създадохме този сайт, за да помогнем в борбата с тропическите нощи, като събираме на едно място чешми, сенчести и прохладни зони, достъпни за всички. <br>
+        Вярваме, че с технологии, грижа и креативност градът може да стане по-хладно и приятно място за хората и животните!
+    </p>
+    <div class="icons">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram"></i>
+    </div>
+
+
+</section>
+</body>
+</html>
